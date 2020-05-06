@@ -1,11 +1,12 @@
 from django.db import models
-from openstates.data.models import LegislativeSession
+
+# from openstates.data.models import LegislativeSession
 
 
 class DataQualityDashboard(models.Model):
 
     chamber = models.CharField(max_length=20)
-    session = models.ForeignKey(LegislativeSession, on_delete=models.CASCADE)
+    # session = models.ForeignKey(LegislativeSession, on_delete=models.CASCADE)
 
     total_bills = models.PositiveIntegerField()
     latest_bill_created_date = models.DateTimeField()
