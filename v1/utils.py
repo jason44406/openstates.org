@@ -34,7 +34,9 @@ def v1_metadata(abbr, jurisdiction):
     for chamber in ("upper", "lower"):
         if chamber in orgs:
             try:
-                print(chamber, orgs[chamber].posts.count())
+                print(chamber, "posts")
+                for p in orgs[chamber].posts.all():
+                    print(p)
                 role = orgs[chamber].posts.all()[0].role
             except IndexError:
                 role = ""
